@@ -3,6 +3,8 @@ My local repo keeps saying: "Your branch is up to date with 'origin/master'" (wh
 
 I looked it up and Appearently my local repo can never know that changes have been made on the remote repo.
 
+A git pull should always be done before creating a new branch (starting a new feature)
+
 ---
 
 Until you do the fetch step (or using git pull) your local repo has no way to know that there are additional commits upstream, and git status only looks at your local origin/master ref.
