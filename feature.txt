@@ -1,0 +1,5 @@
+This working part is ready for a first commit.
+This working part is ready for a second commit.
+Made the final final change for feature completion.
+
+. (Fixed the typo)
