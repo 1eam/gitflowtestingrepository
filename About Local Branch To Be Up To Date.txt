@@ -1,0 +1,17 @@
+I noticed this thing where right after reviewing a pull request, merging and deleting that branch on the remote repo,
+My local repo keeps saying: "Your branch is up to date with 'origin/master'" (while its actually not)
+
+I looked it up and Appearently my local repo can never know that changes have been made on the remote repo.
+
+A git pull should always be done before creating a new branch (starting a new feature)
+
+---
+
+Until you do the fetch step (or using git pull) your local repo has no way to know that there are additional commits upstream, and git status only looks at your local origin/master ref.
+When git status says up-to-date, it means "up-to-date with the branch that the current branch tracks", which in this case means "up-to-date with the local ref called origin/master". That only equates to "up-to-date with the upstream status that was retrieved last time we did a fetch" which is not the same as "up-to-date with the latest live status of the upstream".
+
+Why does it work this way? Well the fetch step is a potentially slow and expensive network operation.
+The design of Git (and other distributed version control systems) is to avoid network operations when unnecessary, and is a completely different model to the typical client-server system many people are used to.
+Creating and switching branches (and checking their status) in Git is supposed to be lightweight, not something that performs a slow network operation to a centralized system. The assumption when designing Git, and the git status output, was that users understand/understood this.
+
+Source: https://stackoverflow.com/questions/27828404/why-does-git-status-show-branch-is-up-to-date-when-changes-exist-upstream
