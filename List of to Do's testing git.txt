@@ -1,3 +1,5 @@
 - Merge conflicts test
 - Renaming remote branch, while having committed
 - Test reverting choices
+- .gitignore
+- Watch webbinar "17 Ways to Undo Mistakes with Git"
