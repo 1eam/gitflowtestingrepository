@@ -4,6 +4,9 @@ My local repo keeps saying: "Your branch is up to date with 'origin/master'" (wh
 I looked it up and Appearently my local repo can never know that changes have been made on the remote repo.
 
 A git pull should always be done before creating a new branch (starting a new feature)
+And Always pull right after a commit, and before you push your local branch.
+This is necessary to stay up to date, and to resolve the merge conflicts before being pushed.
+Your always suppose to pull before you push.
 
 ---
 
